@@ -1,5 +1,5 @@
 import { createContext, useEffect, useState } from "react";
-import { AppConstants } from "../util/constants";
+import { AppConstants } from "../util/constants.js";
 import axios from "axios";
 import { toast } from "react-toastify";
 
