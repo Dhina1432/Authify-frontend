@@ -35,7 +35,6 @@ const Login = () => {
       } else {
         //login api
         const response = await axios.post(`${backendUrl}/login`, {
-          name,
           email,
           password,
         });
