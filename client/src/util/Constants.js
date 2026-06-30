@@ -1,1 +1,3 @@
-export const AppConstants = { BACKEND_URL: "https://authify-backend-production-0b9d.up.railway.app/api" };
+export const AppConstants = {
+  BACKEND_URL: import.meta.env.VITE_BACKEND_URL || "http://localhost:8080/api",
+};
