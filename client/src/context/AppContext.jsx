@@ -4,9 +4,11 @@ import axios from "axios";
 import { toast } from "react-toastify";
 
 // eslint-disable-next-line react-refresh/only-export-components
-export const AppContext = createContext();
+export const AppContext = createContext(); 
+axios.defaults.withCredentials = true;
 
-export const AppContextProvider = (props) => {
+export const AppContextProvider = (props) => { 
+  
   const backendUrl = AppConstants.BACKEND_URL;
 
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -25,7 +27,7 @@ export const AppContextProvider = (props) => {
     }
   };
 
-  const getAuthState = async () => {
+  const getAuthState = async () => { 
     try {
       const response = await axios.get(backendUrl + "/is-authenticated");
       if (response.status === 200 && response.data === true) {
@@ -40,7 +42,6 @@ export const AppContextProvider = (props) => {
   };
 
   useEffect(() => {
-    axios.defaults.withCredentials = true;
     getAuthState();
   }, []);
 
